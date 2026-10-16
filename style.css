@@ -350,7 +350,31 @@ button {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
+}
+
+/* Theme Toggle Button (Sáng / Tối) */
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-sm);
+  background: #fdf2f8;
+  border: 1.5px solid rgba(244, 114, 182, 0.35);
+  color: var(--accent-rose);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(244, 114, 182, 0.12);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  transform: rotate(15deg) scale(1.05);
+  box-shadow: 0 6px 16px rgba(236, 72, 153, 0.35);
 }
 
 /* Hamburger button */
@@ -1478,6 +1502,17 @@ button {
   word-break: break-all;
 }
 
+.contact-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-block: 22px 24px;
+}
+
+.contact-quick-actions .btn {
+  flex-grow: 1;
+}
+
 .social-links-box {
   padding-top: 24px;
   border-top: 1px solid var(--border-subtle);
@@ -1594,7 +1629,15 @@ button {
 .footer-left {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  max-width: 520px;
+}
+
+.footer-quote {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.55;
 }
 
 .footer-copy {
@@ -2060,3 +2103,172 @@ button {
     left: 16px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   19. DARK MODE THEME SUPPORT (TOGGLE)
+   -------------------------------------------------------------------------- */
+body.dark-mode {
+  --bg-primary: #0a0f1d;
+  --bg-secondary: #0f172a;
+  --bg-card: #131d33;
+  --bg-card-hover: #192644;
+  --bg-card-subtle: #162036;
+  --bg-input: #0b1325;
+  --bg-glass: rgba(19, 29, 51, 0.85);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(236, 72, 153, 0.45);
+  --border-soft-pink: rgba(244, 114, 182, 0.2);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 25px -4px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 18px 36px -6px rgba(0, 0, 0, 0.6);
+  --shadow-card-hover: 0 14px 30px -4px rgba(236, 72, 153, 0.25);
+
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(236, 72, 153, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 65%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 45% 95%, rgba(99, 102, 241, 0.06) 0%, transparent 40%);
+}
+
+body.dark-mode .header {
+  background: rgba(10, 15, 29, 0.88);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .header.scrolled {
+  background: rgba(10, 15, 29, 0.96);
+  border-bottom-color: rgba(236, 72, 153, 0.3);
+}
+
+body.dark-mode .nav-menu {
+  background: rgba(10, 15, 29, 0.98);
+}
+
+body.dark-mode .nav-link {
+  color: var(--text-muted);
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--accent-rose);
+}
+
+body.dark-mode .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #facc15;
+}
+
+body.dark-mode .btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--accent-rose);
+}
+
+body.dark-mode .btn-outline {
+  background: transparent;
+  color: var(--accent-rose);
+  border-color: rgba(244, 114, 182, 0.4);
+}
+
+body.dark-mode .btn-outline:hover {
+  background: rgba(236, 72, 153, 0.15);
+}
+
+body.dark-mode .skill-badge {
+  background: rgba(11, 19, 37, 0.85);
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+body.dark-mode .skill-badge:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-rose);
+  color: #ffffff;
+}
+
+body.dark-mode .project-image-box {
+  background: #0f172a;
+}
+
+body.dark-mode .project-overlay {
+  background: rgba(10, 15, 29, 0.8);
+}
+
+body.dark-mode .highlight-quote {
+  background: rgba(11, 19, 37, 0.7);
+  border-left-color: var(--accent-rose);
+}
+
+body.dark-mode .tag-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+}
+
+body.dark-mode .contact-item,
+body.dark-mode .social-btn {
+  background: rgba(11, 19, 37, 0.6);
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+body.dark-mode .contact-item:hover,
+body.dark-mode .social-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-rose);
+  color: var(--accent-rose);
+}
+
+body.dark-mode .footer {
+  background: var(--bg-secondary);
+  border-top-color: var(--border-subtle);
+}
+
+body.dark-mode .footer-quote {
+  color: var(--text-muted);
+}
+
+body.dark-mode .modal-dialog {
+  background: var(--bg-card);
+}
+
+body.dark-mode .modal-header {
+  background: rgba(11, 19, 37, 0.6);
+  border-bottom-color: var(--border-subtle);
+}
+
+body.dark-mode .modal-footer {
+  background: rgba(11, 19, 37, 0.6);
+  border-top-color: var(--border-subtle);
+}
+
+body.dark-mode .floating-badge {
+  background: rgba(19, 29, 51, 0.95);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+body.dark-mode .back-to-top {
+  background: rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.35);
+  color: var(--accent-rose);
+}
+
+body.dark-mode .form-control {
+  background: var(--bg-input);
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+

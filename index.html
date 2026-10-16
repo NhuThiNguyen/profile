@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nguyễn Thị Thảo Như | Backend Developer Portfolio</title>
+  <title>Nguyễn Thị Thảo Như | Personal Portfolio</title>
   
   <!-- SEO Meta Tags -->
   <meta name="description" content="Personal portfolio of Nguyễn Thị Thảo Như, Information Technology student and aspiring Backend Developer.">
@@ -11,11 +11,11 @@
   <meta name="author" content="Nguyễn Thị Thảo Như">
   
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Nguyễn Thị Thảo Như | Backend Developer Portfolio">
+  <meta property="og:title" content="Nguyễn Thị Thảo Như | Personal Portfolio">
   <meta property="og:description" content="Personal portfolio of Nguyễn Thị Thảo Như, Information Technology student and aspiring Backend Developer.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://thaonhu.dev">
-  <meta property="og:image" content="images/3x4.jpg">
+  <meta property="og:url" content="https://nhuthinguyen.github.io/profile/">
+  <meta property="og:image" content="./images/3x4.jpg">
 
   <!-- Favicon (Inline SVG Icon - Soft Rose) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='28' fill='%23fff1f2' stroke='%23f472b6' stroke-width='5'/><text x='50' y='67' font-size='48' font-family='sans-serif' font-weight='bold' fill='%23db2777' text-anchor='middle'>TN</text></svg>">
@@ -28,8 +28,8 @@
   <!-- Font Awesome Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Stylesheet (Relative Path for GitHub Pages) -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -56,6 +56,10 @@
 
       <!-- CTA & Mobile Toggle Button -->
       <div class="nav-actions">
+        <!-- Theme Mode Toggle (Sáng / Tối) -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Chuyển đổi giao diện Sáng / Tối" title="Chuyển đổi giao diện Sáng / Tối">
+          <i class="fa-solid fa-moon"></i>
+        </button>
         <a href="#contact" class="btn btn-outline btn-sm nav-cta">Let's Connect</a>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
           <span class="bar"></span>
@@ -124,7 +128,7 @@
       <div class="hero-image-wrapper reveal">
         <div class="avatar-glow-ring"></div>
         <div class="avatar-box">
-          <img src="images/3x4.jpg" alt="Nguyễn Thị Thảo Như - Avatar" class="hero-avatar" id="heroAvatar" loading="lazy">
+          <img src="./images/3x4.jpg" alt="Nguyễn Thị Thảo Như - Avatar" class="hero-avatar" id="heroAvatar" loading="lazy">
         </div>
         <!-- Decorative Floating Badges -->
         <div class="floating-badge badge-cplus">
@@ -154,7 +158,7 @@
         <div class="about-card-info reveal">
           <div class="info-header">
             <div class="info-avatar-mini">
-              <img src="images/3x4.jpg" alt="Nguyễn Thị Thảo Như">
+              <img src="./images/3x4.jpg" alt="Nguyễn Thị Thảo Như">
             </div>
             <div>
               <h3 class="info-name">Nguyễn Thị Thảo Như</h3>
@@ -413,7 +417,7 @@
         <!-- PROJECT 1: Trekking & Leo núi -->
         <div class="project-card reveal" data-project-id="p1">
           <div class="project-image-box">
-            <img src="images/project-trekking.svg" alt="Trekking &amp; Leo núi" loading="lazy">
+            <img src="./images/project-trekking.svg" alt="Trekking &amp; Leo núi" loading="lazy">
             <div class="project-overlay">
               <button class="btn btn-sm btn-primary open-modal-btn" data-project="p1">
                 <i class="fa-solid fa-circle-info"></i> View Details
@@ -450,7 +454,7 @@
         <!-- PROJECT 3: Interactive Love Website -->
         <div class="project-card reveal" data-project-id="p3">
           <div class="project-image-box">
-            <img src="images/project-love.svg" alt="Interactive Love Website" loading="lazy">
+            <img src="./images/project-love.svg" alt="Interactive Love Website" loading="lazy">
             <div class="project-overlay">
               <button class="btn btn-sm btn-primary open-modal-btn" data-project="p3">
                 <i class="fa-solid fa-circle-info"></i> View Details
@@ -689,6 +693,19 @@
             </div>
           </div>
 
+          <!-- Quick Action Buttons -->
+          <div class="contact-quick-actions">
+            <a href="mailto:nguyenthithaonhu.9a7@gmail.com" class="btn btn-primary btn-sm" title="Mở ứng dụng gửi email">
+              <i class="fa-solid fa-paper-plane"></i> Gửi email trực tiếp
+            </a>
+            <button type="button" class="btn btn-outline btn-sm" id="copyEmailBtn" data-email="nguyenthithaonhu.9a7@gmail.com" title="Sao chép địa chỉ email">
+              <i class="fa-regular fa-copy"></i> Sao chép email
+            </button>
+            <a href="https://github.com/NhuThiNguyen" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="Mở trang GitHub cá nhân">
+              <i class="fa-brands fa-github"></i> Xem GitHub
+            </a>
+          </div>
+
           <!-- Social Links -->
           <div class="social-links-box">
             <span class="social-title">Mạng xã hội &amp; Mã nguồn:</span>
@@ -701,6 +718,10 @@
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn Profile">
                 <i class="fa-brands fa-linkedin-in"></i>
                 <span>LinkedIn</span>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Facebook Profile">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span>Facebook</span>
               </a>
             </div>
           </div>
@@ -750,6 +771,7 @@
         <a href="#home" class="logo">
           Nguyễn Thị Thảo Như
         </a>
+        <p class="footer-quote">"Kiên trì học hỏi mỗi ngày, từng bước xây dựng nền tảng Backend vững chắc và tạo ra giá trị qua từng dòng mã."</p>
         <p class="footer-copy">© 2026 Nguyễn Thị Thảo Như. All Rights Reserved.</p>
       </div>
 
@@ -757,6 +779,7 @@
         <a href="mailto:nguyenthithaonhu.9a7@gmail.com" class="footer-link"><i class="fa-regular fa-envelope"></i> Email</a>
         <a href="https://github.com/NhuThiNguyen" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fa-brands fa-github"></i> GitHub</a>
         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
       </div>
 
       <div class="footer-right">
@@ -845,8 +868,8 @@
     <div class="toast-message" id="toastMessage">Tin nhắn của bạn đã được gửi thành công!</div>
   </div>
 
-  <!-- Main Script -->
-  <script src="script.js"></script>
+  <!-- Main Script (Relative Path for GitHub Pages) -->
+  <script src="./script.js"></script>
 </body>
 </html>
 

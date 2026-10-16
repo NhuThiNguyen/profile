@@ -435,5 +435,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+  /* --------------------------------------------------------------------------
+     8. THEME TOGGLE (LIGHT / DARK MODE)
+     -------------------------------------------------------------------------- */
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const savedTheme = localStorage.getItem('portfolio-theme');
+
+  // Áp dụng theme đã lưu từ trước (nếu có)
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (themeToggleBtn) {
+      themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      themeToggleBtn.setAttribute('title', 'Chuyển sang giao diện Sáng');
+    }
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      if (isDark) {
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        themeToggleBtn.setAttribute('title', 'Chuyển sang giao diện Sáng');
+        localStorage.setItem('portfolio-theme', 'dark');
+        showToast('Đã chuyển sang giao diện Tối (Dark Mode) 🌙');
+      } else {
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        themeToggleBtn.setAttribute('title', 'Chuyển sang giao diện Tối');
+        localStorage.setItem('portfolio-theme', 'light');
+        showToast('Đã chuyển sang giao diện Sáng (Light Mode) ☀️');
+      }
+    });
+  }
+
+
+  /* --------------------------------------------------------------------------
+     9. COPY EMAIL TO CLIPBOARD
+     -------------------------------------------------------------------------- */
+  const copyEmailBtn = document.getElementById('copyEmailBtn');
+
+  function promptCopyFallback(text) {
+    const tempInput = document.createElement('input');
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+      document.execCommand('copy');
+      showToast('Đã sao chép email: ' + text + ' 📋');
+    } catch (err) {
+      showToast('Email: ' + text);
+    }
+    document.body.removeChild(tempInput);
+  }
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', () => {
+      const email = copyEmailBtn.getAttribute('data-email') || 'nguyenthithaonhu.9a7@gmail.com';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email)
+          .then(() => {
+            showToast('Đã sao chép email vào bộ nhớ tạm: ' + email + ' 📋');
+          })
+          .catch(() => {
+            promptCopyFallback(email);
+          });
+      } else {
+        promptCopyFallback(email);
+      }
+    });
+  }
+
 });
 
