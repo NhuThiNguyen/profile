@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       challenges: "Tối ưu hóa dung lượng tài nguyên và hình ảnh để trang web tải nhanh và mượt mà ngay cả khi kết nối mạng 3G/4G chập chờn ở vùng đồi núi.",
       learned: "Nâng cao kỹ năng phân tích bài toán thực tế, quản lý dữ liệu JSON linh hoạt và thiết kế giao diện thân thiện với người dùng (UI/UX).",
-      github: "https://github.com/NhuThiNguyen",
-      demo: "#"
+      github: "https://github.com/NhuThiNguyen/Trekking-Leo-n-i-.git",
+      demo: "https://nhuthinguyen.github.io/Trekking-Leo-n-i/"
     },
     p3: {
       name: "Interactive Love Website",
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
       challenges: "Điều khiển vòng lặp requestAnimationFrame mượt mà trên các dòng điện thoại di động có phần cứng hạn chế mà không làm nóng máy hay tụt pin nhanh.",
       learned: "Làm chủ việc thao tác trên HTML5 Canvas, xử lý sự kiện tương tác chuột/touch, và hiểu sâu cơ chế hoạt động của CSS Animations kết hợp JavaScript.",
       github: "https://github.com/NhuThiNguyen/love-web",
-      demo: "https://github.com/NhuThiNguyen/love-web"
+      demo: "https://nhuthinguyen.github.io/love-web/"
     }
   };
 
@@ -506,4 +506,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-
